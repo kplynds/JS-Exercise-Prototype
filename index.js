@@ -8,16 +8,16 @@
 */
 
 // EXAMPLE SOLUTION CODE:
-// function Airplane(name) {
-//   this.name = name;
-//   this.isFlying = false;
-// }
-// Airplane.prototype.takeOff = function () {
-//   this.isFlying = true;
-// };
-// Airplane.prototype.land = function () {
-//   this.isFlying = false;
-// };
+function Airplane(name) {
+  this.name = name;
+  this.isFlying = false;
+}
+Airplane.prototype.takeOff = function () {
+  this.isFlying = true;
+};
+Airplane.prototype.land = function () {
+  this.isFlying = false;
+};
 
 
 /*
@@ -45,25 +45,23 @@ function Person(name, age) {
   this.age = age;
 }
 
-Person.prototype.eat(edible) {
+Person.prototype.eat = function (edible){
   if (this.stomach.length < 10) {
     this.stomach.push(edible);
   }
 }
 
-Person.prototype.poop() {
+Person.prototype.poop= function() {
   this.stomach = [];
 }
 
-Person.prototype.toString() {
-  return `${this.name}`, ${this.age};
-}
+
 
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
     - All instances built with Car:
-        + should initialize with an `tank` at 0
+        + should initialize with an `tank` ›at 0
         + should initialize with an `odometer` at 0
     - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
     - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
@@ -73,8 +71,15 @@ Person.prototype.toString() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
+function Car(model, milesPerGallon) {
+  this.tank = 0;
+  this.odometer = 0;
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+}
 
+Car.prototype.fill = function(gallons) {
+  this.tank = this.tank + gallons;
 }
 
 /*

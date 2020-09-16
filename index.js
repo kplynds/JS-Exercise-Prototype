@@ -8,16 +8,16 @@
 */
 
 // EXAMPLE SOLUTION CODE:
-function Airplane(name) {
-  this.name = name;
-  this.isFlying = false;
-}
-Airplane.prototype.takeOff = function () {
-  this.isFlying = true;
-};
-Airplane.prototype.land = function () {
-  this.isFlying = false;
-};
+// function Airplane(name) {
+//   this.name = name;
+//   this.isFlying = false;
+// }
+// Airplane.prototype.takeOff = function () {
+//   this.isFlying = true;
+// };
+// Airplane.prototype.land = function () {
+//   this.isFlying = false;
+// };
 
 
 /*
@@ -39,8 +39,24 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
+function Person(name, age) {
+  this.stomach = [];
+  this.name = name;
+  this.age = age;
+}
 
+Person.prototype.eat(edible) {
+  if (this.stomach.length < 10) {
+    this.stomach.push(edible);
+  }
+}
+
+Person.prototype.poop() {
+  this.stomach = [];
+}
+
+Person.prototype.toString() {
+  return `${this.name}`, ${this.age};
 }
 
 /*
